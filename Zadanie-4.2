@@ -6,27 +6,26 @@ public class Zadanie42 {
 
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("C:\\Users\\MarMoni\\Documents\\Informatyka\\Okregi.txt"));
-        List<String> e= new ArrayList<>();
+        Scanner scanner = new Scanner(new File("C:\\Users\\erixv\\Documents\\Inf\\Okregi.txt"));
+        int X =0;
+        List<String> Okr= new ArrayList<>();
         while(scanner.hasNextLine()) {
-            e.add(scanner.nextLine());
+            Okr.add(scanner.nextLine());
         }
-        int ile =0;
         List<String> styczne= new ArrayList<>();
-        for (int i = 0; i < e.size(); i++) {
-            String[] a =e.get(i).split(" ");
+        for (int i = 0; i < Okr.size(); i++) {
+            String[] a =Okr.get(i).split(" ");
 
             if(Math.abs(Integer.valueOf(a[1]))==Math.abs(Integer.valueOf(a[2]))) {
-                ile++;
-                styczne.add(e.get(i));
+                X++;
+                styczne.add(Okr.get(i));
             }
-
         }
-        Collections.sort(styczne, new comp());
+        Collections.sort(styczne);
         for (int i = 0; i < styczne.size(); i++) {
             System.out.println(styczne.get(i));
         }
-        System.out.println(ile);
+        System.out.println(X);
 
     }
 
