@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Sfeniczne {
+
+    public static boolean isPrime(int liczba) {
+        for (int i = 2; i <= (int) Math.sqrt(liczba); i++) {
+            if (liczba % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int a = scn.nextInt();
+        int c = 1;
+        List<Integer> lista1 = new ArrayList<>();
+        List<Integer> lista2 = new ArrayList<>();
+        for (int i = 1; i <= a; i++) {
+            if (a % i == 0) {
+                lista1.add(i);
+            }
+        }
+        if (lista1.size() == 8) {
+            for (int i = 0; i < 8; i++) {
+                if (isPrime(lista1.get(i))) {
+                    c = c * lista1.get(i);
+                    lista2.add(lista1.get(i));
+                }
+
+            }
+            if (c == a) {
+                System.out.println(lista2);
+            }
+        } else {
+            System.out.println("NIE");
+        }
+    }
+}
