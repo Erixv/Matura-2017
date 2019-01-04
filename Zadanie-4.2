@@ -12,18 +12,18 @@ public class Zadanie42 {
         while(scanner.hasNextLine()) {
             Okr.add(scanner.nextLine());
         }
-        List<String> styczne= new ArrayList<>();
+        List<String> S = new ArrayList<>();
         for (int i = 0; i < Okr.size(); i++) {
             String[] a =Okr.get(i).split(" ");
 
             if(Math.abs(Integer.valueOf(a[1]))==Math.abs(Integer.valueOf(a[2]))) {
                 X++;
-                styczne.add(Okr.get(i));
+                S.add(Okr.get(i));
             }
         }
-        Collections.sort(styczne);
-        for (int i = 0; i < styczne.size(); i++) {
-            System.out.println(styczne.get(i));
+        Collections.sort(S);
+        for (int i = 0; i < S.size(); i++) {
+            System.out.println(S.get(i));
         }
         System.out.println(X);
 
