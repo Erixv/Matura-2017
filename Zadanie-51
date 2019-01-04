@@ -1,18 +1,21 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Zadanie51 {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("C:/Users/MarMoni/Documents/Informatyka/rejestrator.txt"));
+        Scanner scanner = new Scanner(new File("C:\\Users\\erixv\\Documents\\Inf\\rejestrator.txt"));
         String[] array = new String[4844];
+        PrintWriter pisz = new PrintWriter("C:\\Users\\erixv\\Documents\\Inf\\wyniki5.txt");
         int a = 0;
         while (scanner.hasNextLine()) {
             array[a] = scanner.nextLine();
             a++;
         }
+
 
         List<String> z = new ArrayList<>();
         for (int i = 0; i < array.length; i++) {
@@ -29,5 +32,11 @@ public class Zadanie51 {
         System.out.println(z.get(2221));
         System.out.println(z.get(3332));
         System.out.println(z.get(4443));
+
+        pisz.println(z.get(1110));
+        pisz.println(z.get(2221));
+        pisz.println(z.get(3332));
+        pisz.println(z.get(4443));
+        pisz.close();
     }
 }
