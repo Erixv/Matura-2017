@@ -1,0 +1,9 @@
+int reszta =0;
+		for (int j = 0; j < Nomin.length; j++) {
+			while(K>=Nomin[j]) {
+				reszta=reszta+K/Nomin[j];
+				K=K%Nomin[j];
+				
+			}
+		}
+		return reszta;
