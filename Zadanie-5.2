@@ -1,0 +1,34 @@
+import java.util.List;
+import java.util.Scanner;
+
+public class Zadanie52 {
+    public static boolean palindrom (String a){
+    StringBuilder x = new StringBuilder(a);
+    x.reverse();
+    return x.toString().equals(a);
+    }
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File("C:/Users/MarMoni/Documents/Informatyka/rejestrator.txt"));
+        String[] array = new String[4844];
+        int a = 0;
+        while (scanner.hasNextLine()) {
+            array[a] = scanner.nextLine();
+            a++;
+        }
+
+        List<String> z = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            String h1 = String.valueOf(Integer.valueOf(array[i].substring(0, 4), 2));
+            String h2 = String.valueOf(Integer.valueOf(array[i].substring(4, 8), 2));
+            String m1 = String.valueOf(Integer.valueOf(array[i].substring(8, 12), 2));
+            String m2 = String.valueOf(Integer.valueOf(array[i].substring(12, 16), 2));
+            String s1 = String.valueOf(Integer.valueOf(array[i].substring(16, 20), 2));
+            String s2 = String.valueOf(Integer.valueOf(array[i].substring(20, 24), 2));
+            String c = h1 + h2 + ":" + m1 + m2 + ":" + s1 + s2;
+            z.add(c);
+            if (palindrom(z.get(i))){
+                System.out.println(z.get(i));
+            }
+        }
+    }
+}
