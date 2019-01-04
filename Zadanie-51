@@ -1,0 +1,33 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Zadanie51 {
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scanner = new Scanner(new File("C:\\Users\\erixv\\Documents\\Inf\\punkty.txt"));
+        String[] tablica = new String[4844];
+        int a = 0;
+        while (scanner.hasNextLine()) {
+            tablica[a] = scanner.nextLine();
+            a++;
+        }
+
+        List<String> godziny = new ArrayList<>();
+        for (int i = 0; i < tablica.length; i++) {
+            String h1 = String.valueOf(Integer.valueOf(tablica[i].substring(0, 4), 2));
+            String h2 = String.valueOf(Integer.valueOf(tablica[i].substring(4, 8), 2));
+            String m1 = String.valueOf(Integer.valueOf(tablica[i].substring(8, 12), 2));
+            String m2 = String.valueOf(Integer.valueOf(tablica[i].substring(12, 16), 2));
+            String s1 = String.valueOf(Integer.valueOf(tablica[i].substring(16, 20), 2));
+            String s2 = String.valueOf(Integer.valueOf(tablica[i].substring(20, 24), 2));
+            String czas = h1 + h2 + ":" + m1 + m2 + ":" + s1 + s2;
+            godziny.add(czas);
+        }
+        System.out.println(godziny.get(1110));
+        System.out.println(godziny.get(2221));
+        System.out.println(godziny.get(3332));
+        System.out.println(godziny.get(4443));
+    }
+}
