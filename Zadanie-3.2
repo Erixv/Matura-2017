@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class LiczbyPierwsze {
+    public static boolean isPrime(int liczba){
+        for (int i = 2; i <= (int) Math.sqrt(liczba) ; i++) {
+            if (liczba%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner scn=new Scanner(System.in);
+        int liczba=scn.nextInt();
+        if (isPrime(liczba)) System.out.println("TAK");
+        else System.out.println("NIE");
+    }
+}
